@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.it.wei.mapper.PermissionMapper">
+
+    <!--根据权限id查询拥有的所有权限-->
+    <select id="findPermissionByRoleId" resultType="com.it.wei.model.Permission">
+        SELECT
+            role.id,
+            role.available,
+            role.description,
+            role.role,
+            permission.`name`,
+            permission.permission,
+            permission.url
+        FROM
+            (permission,role)
+        RIGHT JOIN role_permission ON permission.id = role_permission.permission_id
+        AND role_permission.role_id = role.id
+        WHERE role.id=#{roleId}
+    </select>
+</mapper>
