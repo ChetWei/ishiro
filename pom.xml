@@ -16,7 +16,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <!--SpringBoot版本-->
-        <version>2.1.6.RELEASE</version>
+        <version>2.1.10.RELEASE</version>
     </parent>
 
 

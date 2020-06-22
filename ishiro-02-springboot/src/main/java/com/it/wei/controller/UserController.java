@@ -29,12 +29,12 @@ public class UserController {
     @GetMapping("/add")
     @RequiresPermissions(value = "user:add")
     public String add(){
-        return "success";
+        return "add";
     }
 
     @GetMapping("/update")
     @RequiresPermissions(value = "user:update")
     public String update(){
-        return "success";
+        return "update";
     }
 }
