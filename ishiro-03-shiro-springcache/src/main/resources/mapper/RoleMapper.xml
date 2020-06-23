@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.it.wei.mapper.RoleMapper">
+
+    <!--根据用户名称查询用户拥有的所有角色-->
+    <select id="findRoleByUsername" resultType="com.it.wei.model.Role">
+    SELECT user.id,user.`name`,user.`password`,user.salt,role.id,role.role,role.description,role.available
+    FROM user
+    RIGHT JOIN user_role ON user.id = user_role.user_id
+    LEFT JOIN role ON user_role.role_id = role.id
+    WHERE name=#{username}
+    </select>
+</mapper>

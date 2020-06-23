@@ -11,6 +11,8 @@
     <modules>
         <module>ishiro-01</module>
         <module>ishiro-02-springboot</module>
+        <module>ishiro03-shiro-springcache</module>
+        <module>ishiro-04-shirojwt</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
